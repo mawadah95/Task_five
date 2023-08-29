@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="card text-white bg-primary m-5 Stylethis">
+  <div class="row">
+    
+      <div class="card-header text-center">
+        <img class="card-img-top" src="../assets/Weather3.jpg" alt="Card image cap">
+        <br>
+        <br>  
+        <h2>Today Weather</h2>
+          <div class="card-body">
+          <div *ngIf="weatherData">
+            <h3>{{ weatherData.name }}</h3>
+            <p>Temperature: {{ weatherData.main.temp }}°C</p>
+            <p>Description: {{ weatherData.weather[0].description }}</p>
+            <p>Humidity: {{ weatherData.main.humidity }}%</p>
+          </div>
+          <div *ngIf="error">
+            <p>{{ error }}</p>
+          </div>
+      
+          
+             <br>
+          
+     
+      
+          <form (ngSubmit)="searchWeather()">
+            <input type="text" class="form-control mb-3" placeholder="Enter a Country Name" [(ngModel)]="city" name="city">
+            <br>
+            <button type="submit" class="btn btn-light">Search</button>
+          </form>
+            
+        </div>
+       </div>
+       </div>
+       </div>
+    </div>
+
+
+<!-- <div class="container mt-5">
+  <h1>Weather Forecast App</h1>
+  <div class="row">
+    <div class="col-md-6">
+  
+      <div class="card">
+        <div class="card-body">
+          <h2>Current Weather</h2>
+          <div *ngIf="weatherData">
+            <h3>{{ weatherData.name }}</h3>
+            <p>Temperature: {{ weatherData.main.temp }}°C</p>
+            <p>Description: {{ weatherData.weather[0].description }}</p>
+            <p>Humidity: {{ weatherData.main.humidity }}%</p>
+          </div>
+          <div *ngIf="error">
+            <p>{{ error }}</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-6">
+  
+      <div class="card">
+        <div class="card-body">
+          <h2>Search Location</h2>
+          <form>
+            <input type="text" class="form-control mb-3" placeholder="Enter a location">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
