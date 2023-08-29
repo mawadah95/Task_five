@@ -13,6 +13,7 @@
             <p>Temperature: {{ weatherData.main.temp }}°C</p>
             <p>Description: {{ weatherData.weather[0].description }}</p>
             <p>Humidity: {{ weatherData.main.humidity }}%</p>
+            <img [src]="'https://openweathermap.org/img/w/' + weatherData.weather[0].icon + '.png'" alt="Weather Icon">
           </div>
           <div *ngIf="error">
             <p>{{ error }}</p>
